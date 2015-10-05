@@ -1,198 +1,131 @@
-# ぐんぐん API仕様書 v.0.1
+# 斬新な時間の提案
+## 日本のティータイム
+いままでそんな時間を過ごしたことはないだろう。
+さあ、興味が湧いてきたかな？
 
-URL https://xxx.herokuapp.com/ (未定)
+<!--
+# Innovative time
+## Japanese tea time
+Would not that I have spent such a time until now.
+さあ〜〜〜〜
+-->
 
-## 1.ユーザー個人の情報
+# New experience
+## Japanese teatime
+It's different until now.
+Are you getting interested in?
 
-トップ画面に必要
+# 昆布羊羹
+## 天皇も愛した味
+天皇も食べる、ぼく、昆布羊羹。
+特徴は何と言っても昆布を練りこんでいるところ。
+この味が想像できるかい？
 
-```
-GET /users/:card_number.json
-```
+それに、天皇に献上されるなんてすごいと思わないか？
+食べた者にしかこの魅力は伝わらないぜ！
 
-応答
+<!--
+# komb-yokan
+## Taste emperor also loved
+天皇も〜〜〜〜
+Feature where you are kneaded After all kelp.
+Is this taste can imagine?
 
-```
-{
-    "role":"student",
-    "nick_name":"あおもりはなこ",
-    "recent_cell": 20,
-    "cell": 26,
-    "statuses": [
-        {
-            "category":"健康",
-            "level": 1,
-            "recent_experience": 10,
-            "experience": 16,
-            "next_level_required_experience": 50
-        },
-        {
-            "category":"お友達・あいさつ",
-            "level": 1,
-            "recent_experience": 8,
-            "experience": 12,
-            "next_level_required_experience": 50
-        }
-    ],
-    "assigns": [
-        {
-            "mission_id": 1,
-            "category":"健康",
-            "level": 2,
-            "description":"手を洗う"
-        },
-        {
-            "id": 4,
-            "category":"お友達・あいさつ",
-            "level": 2,
-            "description":"あいさつをする"
-        }
-    ]
-}
-```
+And, Do not you think that the amazing Nante be presented to the Emperor?
+Only to eat the person who this appeal is not transmitted!
+-->
 
-例外
+# Konbu-Yokan
+## Tenno loves me, too.
+Yokan with kelp, it is my feature. Can you imagine the taste?
+Tenno, the emperor of Japan also loves me.
+How is it? It's amazing, right?
+You must try me.
 
-```
-{ "error":"404 Not Found","detail":"user not found with card_number=F25C2" }
-```
 
-## 2.ミッションの一覧取得
+# 羊羹
+## healthy brilliant sweets
+羊羹のことを詳しく知りたくなったかな？
+羊羹は、小豆と寒天のゼリーだよ。
+しっとりしていて、素朴な甘さがいい感じ。
+抹茶や緑茶との相性は抜群だ。
 
-ミッション小項目設定に必要
+<!--
+I wonder if now want to know the details of that of yokan?
+Yokan is jelly of red beans and agar.
+If you are moist, it feels good rustic sweetness.
+Compatibility with green tea and green tea's preeminent.
+-->
 
-```
-GET /categories/:category_id.json
-```
+# Yokan
+## healthy brilliant sweets
+Do you want to know more about Yokan?
+Yokan is a sweet jelly made from red beans and agar.
+Its moist and rustic sweet is prety good.
+It is the best pertner of green tea.
 
-応答
+# 和菓子
+## 綺麗で美しい
+羊羹は和菓子の一種なんだ。
+和菓子は、日本で古くからお茶と一緒に食べられている。
+それはもう美しく、上品なお菓子だ。
 
-```
-{
-    "name": "健康",
-    "levels": [
-        {
-            "value": 1,
-            "missions": [
-                    { "id": 1, "description": "ああああ" },
-                    { "id": 2, "description": "いいいい" },
-                    { "id": 3, "description": "うううう" },
-                    { "id": 4, "description": "ええええ" },
-                    ….
-                    { "id": 9, "description": "おおおお" }
-            ]
-        },
-        {
-            "value": 2,
-            "missions": [
-                    { "id": 10, "description": "かかかか" },
-                    { "id": 11, "description": "きききき" },
-                    { "id": 12, "description": "くくくく" },
-                    { "id": 13, "description": "けけけけ" }
-            ]
-        },
-    ]
-}
-```
+<!--
+Yokan is kind of japanese sweets.
+Japanese sweets are eaten with tea since ancient times in Japan.
+It is another beautifully, and elegant sweets.
+-->
 
-## 3.ミッションの設定
+# Wagashi
+## a beautiful sweets
+Yokan is a kind of "Wagashi"; Japanese sweets.
+Wagashi is a must item in Japanese teatime for a long time.
+It's so pretty. It's so elegant.
 
-```
-POST /assigns.json
-```
 
-送信データ(HTTP)
+# 甘精堂
+## sweets spirits アトリエ
+青森県青森市に店舗を構える、歴史ある和菓子屋さんだ。
+創業は1891年。小さな茶屋から始まったんだ。
 
-```
-user_id=3
-mission_ids[]=20
-mission_ids[]=18
-```
+１００年以上前から昆布羊羹のおいしさをみんなに届けているんだ。
 
-```
-user_id=3&mission_ids[]=20&mission_ids[]=18
-```
+<!--
+Set up a store in Aomori, Aomori Prefecture, it's sweets shop in history.
+Founded in 1891. We were starting from a small teahouse.
+We're delivering the taste of kelp youkan to everyone from more than 100 years ago.
+-->
 
-送信データ(JSON)
+# Kanseido
+## Sweets spirits atelier
+One of the oldest sweets maker in Aomori, Japan.
+Since 1891, Kanseido has been delivering me all the time.
 
-```
-{ "user_id":3, "missions_ids": [20, 18] }
-```
 
-ヘッダーとして「Content-type: application/json」を先に送る
+# eat now!
+以下のリンクからオンラインで購入してくれ！
+僕の味や風味を真空パックで、世界中に発送するぞ。
 
-応答
+<!--
+Let me be purchased online from the link below!
+My taste and flavor in a vacuum pack, and shipped to the world.
+-->
 
-```
-{ "user_id":3, "missions_ids": [20, 18] }
-```
+# Buy now!
+## And eat now!
+You can buy online from the link below.
+Items are delivered directly from the manifacture.
 
-例外
 
-user_idに対応したユーザーがいない
+# お問い合わせ先
+甘精堂本店
+〒030-0801 青森県青森市新町1-13-21
+TEL:017-722-3740
+FAX:017-722-1661
+Email:aaaaaaaaaaaaaaaaa
 
-```
-{"error":"404 Not Found","detail":"user not found with user_id=3"}
-```
-
-## 4.ミッションの達成
-
-```
-POST /histories.json
-```
-
-送信データ(HTTP)
-
-```
-user_id=3
-mission_ids[]=20
-mission_ids[]=18
-```
-
-```
-user_id=3&mission_ids[]=20&mission_ids[]=18
-```
-
-送信データ(JSON)
-
-```
-{ "user_id":3, "missions_ids": [20, 18] }
-```
-
-ヘッダーとして「Content-type: application/json」を先に送る
-
-応答
-
-```
-{ "user_id":3, "missions_ids": [20, 18] }
-```
-
-例外
-
-user_idに対応したユーザーがいない
-
-```
-{"error":"404 Not Found","detail":"user not found with user_id=3"}
-```
-
-user_idに対応したユーザーはいるが、mission_idsにミッションが割り振られていない
-
-```
-{"error":"404 Not Found","detail":"mission_ids[]=20 does not assigned with user_id=3"}
-```
-
-curlによる送信の場合
-
-```
-$ curl -X POST -H "Content-type: application/json" -d "{ user_id: 3, mission_ids: [20, 12] } http://localhost:3000/api/histories.json
-```
-
-## 5.ユーザーのすごろく情報(今回分)
-
-ユーザー情報を参照する
-
-## 6.対応したURLが存在しない場合の例外
-
-```
-{"error":"404 Not Found","detail":"routing error"}
-```
+# contact
+kanseido
+Shinmachi 1-13-21, Aomori, Aomori, 030-0801, Japan 
+Tel : +81-17-722-3740
+Fax : +81-17-722-1661
